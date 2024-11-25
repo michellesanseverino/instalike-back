@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "instalike-back",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project is based in an Instagram page. Made this project as a study from the back-end imersion, using JavaScript, Node.js and Google Gemini, provided by Alura.",
   "main": "index.js",
   "type": "module",
   "license": "AGPL-version-3.0",
@@ -17,18 +17,15 @@
   },
   "bugs": "",
   "keywords": [],
-  "author": {
-    "name": "",
-    "email": "",
-    "url": ""
-  },
+  "author": "",
   "contributors": [],
   "scripts": {
-    "dev": "",
-    "test": ""
+    "dev": "node --watch --env-file=.env server.js",
+    "test": "",
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.21.1",
-    "node": "^18.20.5"
+    "mongodb": "^6.11.0"
   }
 }

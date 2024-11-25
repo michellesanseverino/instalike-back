@@ -1,2 +1,6 @@
+// Used for ignoring files in git
+// This file is used to ignore files that are not needed in the git repository
+
 node_modules
-chave-api.txt
+important-information.txt
+.env

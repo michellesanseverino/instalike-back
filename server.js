@@ -1,29 +1,12 @@
-import express from "express";
+// Code to create a server using the Express framework and connect to the database using the MongoClient class from the mongodb package
+import express, { Router } from "express"
+import routes from "./src/routes/postsRoutes.js";
 
-const posts = [
-    { id:1, descricao: "uma foto teste", imagem: "https://placecats.com/millie/300/150"},
-    { id:2, descricao: "Gato fazendo yoga", image: "https://placecats.com/millie/300/150"},
-    { id:3, descricao: "Gato fazendo yoga", image: "https://placecats.com/millie/300/150"},       
-];
-
+//Code to create an Express application
 const app = express();
-app.use(express.json());
+routes(app);
 
+//Code to create a server that listens on port 3000
 app.listen(3000, () => {
-    console.log("Servidor escutando...");
-});
-
-app.get("/posts", (req, res) => {
-    res.status(200).json(posts);
-});
-
-function buscarPostPorID(id){
-    return posts.findIndex((post) => {
-        return post.id === Number(id);
-    })
-};
-
-app.get("/posts/:id", (req, res) => {
-    const index = buscarPostPorID(req.params.id);
-    res.status(200).json(posts[index]);
+    console.log("Server listening...");
 });
