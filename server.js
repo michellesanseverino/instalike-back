@@ -4,6 +4,7 @@ import routes from "./src/routes/postsRoutes.js";
 
 //Code to create an Express application
 const app = express();
+app.use(express.static("uploads"));
 routes(app);
 
 //Code to create a server that listens on port 3000
