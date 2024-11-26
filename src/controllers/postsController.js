@@ -1,6 +1,7 @@
 import fs from "fs";
 
-import {getAllPosts, createPost } from "../models/postsModel.js";
+import {getAllPosts, createPost, updatePost } from "../models/postsModel.js";
+import generateDescriptionWithGemini from "../services/geminiService.js";
 
 //The listAllPosts function is used to return all posts from the database
 export async function listAllPosts (req, res) {
@@ -28,7 +29,7 @@ export async function newPostCreated (req, res) {
 export async function uploadImage(req, res) {
     //The req.body property is used to access the request body
     const newPost = {
-        descricao: "",
+        description: "",
         imgURL: req.file.originalname,
         alt: ""
     };
@@ -49,3 +50,27 @@ export async function uploadImage(req, res) {
         res.status(500).json({ message: error.message });
     }
 }
+
+export async function updateNewImage(req, res) {
+    const id = req.params.id;
+    const urlImage = `http://localhost:3000/${id}.png`;
+
+    try {
+        const imgBuffer = fs.readFileSync(`uploads/${id}.png`);
+        const desc = await generateDescriptionWithGemini(imgBuffer);
+        
+        const newPost = {
+            imgURL: urlImage,
+            description: desc,
+            alt: req.body.alt
+        };
+
+        const updatedPost = await updatePost(id, newPost);
+        res.status(200).json(updatedPost);
+    } catch (error) {
+        //The res.status method is used to set the status code of the response
+        res.status(500).json({ message: error.message });
+    }
+
+};
+
