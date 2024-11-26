@@ -9,6 +9,11 @@ The MongoClient class is imported from the mongodb package*/
 import { MongoClient } from "mongodb";
 
 export default async function connectDB(stringConnection) {
+    if (!stringConnection || typeof stringConnection !== 'string') {
+        console.error('Invalid connection string');
+        return;
+    }
+
     let mongoClient;
     try {
         mongoClient = new MongoClient(stringConnection);
@@ -21,4 +26,3 @@ export default async function connectDB(stringConnection) {
         console.error('Error connecting to database', error);
     }
 }
-
