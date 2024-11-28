@@ -1,64 +1,40 @@
-# Instalike-back
+# Instalike-Back
 
-Instalike-back is a backend service for the Instalike application. It provides APIs for user authentication, photo uploads, likes, comments, and more.
+## Project Overview
+Instalike-Back is a backend service designed to support the Instalike application (project created during the course "Imersão Dev Back-end" provided by Alura in November 2024). This project provides APIs for photo uploads. Also, as a experiment, the course explained how the Google Gemini can be integrated inside back-end. For the database and deploy, it was used MongoDB Atlas and Google Cloud.
+For more information, please read below:
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Installation
-
-1. Clone the repository:
-     ```sh
-     git clone https://github.com/yourusername/instalike-back.git
-     ```
-2. Navigate to the project directory:
-     ```sh
-     cd instalike-back
-     ```
-3. Install dependencies:
-     ```sh
-     npm install
-     ```
-4. Set up environment variables by creating a `.env` file in the root directory and adding the necessary configurations.
-
-## Usage
-
-Start the development server:
-```sh
-npm run dev
-```
+## Tools and Technologies Used
+- **Node.js**: JavaScript runtime for building the backend.
+- **Express.js**: Web framework for Node.js to create APIs.
+- **MongoDB**: NoSQL database for storing user data and photos.
+- **Mongoose**: ODM (Object Data Modeling) library for MongoDB and Node.js.
+- **JWT (JSON Web Tokens)**: For secure user authentication.
+- **Multer**: Middleware for handling `multipart/form-data` for photo uploads.
+- **Cloudinary**: Cloud service for image storage and management.
+- **dotenv**: Module to load environment variables from a `.env` file.
+- **Thunder**: Extension used in VS Code for testing API Endpoints.
+- **Postman**: Software used for testing API Endpoints.
 
 ## API Endpoints
+- **Post Creation**:
+     - `POST /posts`: Create a post.
 
-### Authentication
+- **Photo Uploads**:
+     - `POST /upload`: Upload a new photo.
 
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login a user
+- **Return all posts**
+     - `GET /posts`: Obtain all posts in the database
 
-### Photos
+- **Update an image**
+     - `PUT /upload/:id`: Updates the image from the ID informed
 
-- `POST /api/photos` - Upload a new photo
-- `GET /api/photos` - Get all photos
+## Learning points
 
-### Likes
-
-- `POST /api/photos/:id/like` - Like a photo
-- `DELETE /api/photos/:id/like` - Unlike a photo
-
-### Comments
-
-- `POST /api/photos/:id/comments` - Add a comment to a photo
-- `GET /api/photos/:id/comments` - Get all comments for a photo
+     During this course, I was able to practice my knowledge in Javascript and, more specific, in Node.js. For this project, the practice of integrating routes with database was a special way for me to learn about MongoDB, one of the most use database services using NoSQL. I was able to understand and practice how an API works and how can I implement with the best practices in my future projects.  
 
 ## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any changes.
+Feel free to submit issues and enhancement requests. Fork the repository and create a pull request to contribute.
 
 ## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
