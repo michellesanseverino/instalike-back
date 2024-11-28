@@ -31,9 +31,9 @@ For more information, please read below:
 
 ## Learning points
 
--> During this course, I was able to **practice my knowledge in Javascript and, more specific, in Node.js.**
--> For this project, the practice of **integrating routes with database was a special way for me to learn about MongoDB**, one of the most use database services using NoSQL. 
--> I was able to understand and **practice how an API works and how can I implement with the best practices in my future projects**.  
+- During this course, I was able to **practice my knowledge in Javascript and, more specific, in Node.js.**
+- For this project, the practice of **integrating routes with database was a special way for me to learn about MongoDB**, one of the most use database services using NoSQL. 
+- I was able to understand and **practice how an API works and how can I implement with the best practices in my future projects**.  
 
 ## Contributing
 Feel free to submit issues and enhancement requests. Fork the repository and create a pull request to contribute.
