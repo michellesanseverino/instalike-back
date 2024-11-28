@@ -1,7 +1,7 @@
 # Instalike-Back
 
 ## Project Overview
-Instalike-Back is a backend service designed to support the Instalike application (project created during the course "Imersão Dev Back-end" provided by Alura in November 2024). This project provides APIs for photo uploads. Also, as a experiment, the course explained how the Google Gemini can be integrated inside back-end. For the database and deploy, it was used MongoDB Atlas and Google Cloud.
+Instalike-Back is a backend service designed to support the Instalike application (project created during the course "Imersão Dev Back-end" provided by Alura in November 2024). **This project provides APIs for photo upload**s. Also, as a experiment, the course explained **how the Google Gemini can be integrated inside back-end**. For the database and deploy, **it uses MongoDB Atlas and Google Cloud**.
 For more information, please read below:
 
 ## Tools and Technologies Used
